@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Nera Dervišević">
     <title>Turistička agencija "Avanturist"</title>
 </head>
 
@@ -13,9 +14,9 @@
         <h1>Turistička agencija "Avanturist"</h1>
         <nav>
             <ul>
-                <li><a href="#">O nama</a></li>
-                <li><a href="#">Naše djelatnosti</a></li>
-                <li><a href="#">Kontakt</a></li>
+                <li><a href="#onama">O nama</a></li>
+                <li><a href="#djelatnosti">Naše djelatnosti</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
             </ul>
         </nav>
         <hr>
@@ -24,50 +25,53 @@
     <main>
         <h1>Turistička agencija "Avanturist"</h1>
         <section>
-            <h2>O nama</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit aliquid optio magnam dolor quas
-                ipsum. Laboriosam deleniti fuga tenetur nemo sed animi voluptate. Ipsa veritatis adipisci laboriosam
-                incidunt provident eius.</p>
-            <img src="/algebra-polaznici-main/algebra-polaznici-main/01 - HTML/Media/images/ljudi/grupe-ljudi/team.jpg"
-                alt="team" width="500px">
-        </section>
-        <section>
-            <h2>Naše djelatnosti</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus, cupiditate. Facilis consectetur,
-                voluptas non obcaecati ducimus fuga inventore ea quia totam beatae necessitatibus, qui magnam
-                repudiandae. Nulla ut numquam natus?</p>
-            <img src="/algebra-polaznici-main/algebra-polaznici-main/01 - HTML/Media/images/stvari/adventure.jpg"
-                alt="adventure" width="500px">
-        </section>
-        <section>
-            <h2>Kontakt</h2>
+            <h2 id="onama">O nama</h2>
             <article>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit aliquid optio magnam dolor
+                    quas
+                    ipsum. Laboriosam deleniti fuga tenetur nemo sed animi voluptate. Ipsa veritatis adipisci laboriosam
+                    incidunt provident eius.</p>
+                <img src="/algebra-polaznici-main/algebra-polaznici-main/01 - HTML/Media/images/ljudi/grupe-ljudi/team.jpg"
+                    alt="team" width="500px">
+            </article>
+        </section>
+        <section>
+            <h2 id="djelatnosti">Naše djelatnosti</h2>
+            <article>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus, cupiditate. Facilis consectetur,
+                    voluptas non obcaecati ducimus fuga inventore ea quia totam beatae necessitatibus, qui magnam
+                    repudiandae. Nulla ut numquam natus?</p>
+                <img src="/algebra-polaznici-main/algebra-polaznici-main/01 - HTML/Media/images/stvari/adventure.jpg"
+                    alt="adventure" width="500px">
+            </article>
+        </section>
+        <section>
+            <h2 id="kontakt">Kontakt</h2>
+            <aside>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum quo alias, doloribus ducimus dolores
                     officia fugit voluptas at dignissimos accusantium sapiente dolorum dicta nostrum non sequi eaque
                     error placeat repellendus.</p>
-            </article>
-            <section>
+            </aside>
+            <div>
                 <form name="Form" action="" method="post" enctype="multipart/form-data" autocomplete="off">
                     <p>
-                        <label for="ime">Ime i prezime<sup>*</sup></label><br>
+                        <label for="ime">Ime i prezime</label><br>
                         <input id="ime" name="imeprezime" type="text" placeholder="Vaše ime i prezime" size="30"
                             required>
                     </p>
                     <p>
-                        <label for="email">E-mail<sup>*</sup></label><br>
-                        <input id="email" name="email" type="text" placeholder="username@email.com" size="30" required>
+                        <label for="email">E-mail</label><br>
+                        <input id="email" name="email" type="email" placeholder="username@email.com" size="30" required>
                     </p>
                     <p>
                         <label for="poruka">Poruka</label><br>
                         <textarea id="poruka" name="poruka" cols="40" rows="6" required maxlength="999"></textarea>
                     </p>
                     <p>
-                        <input name="submit_btn" type="submit" value="Pošalji poruku">
+                        <input name="submit-btn" type="submit" value="Pošalji poruku">
                     </p>
-
-
                 </form>
-            </section>
+            </div>
         </section>
         <hr>
 
