@@ -5,8 +5,10 @@ var firstName, lastName, price, discount, fullPrice;
 	price = 19.90;
 	discount = 0.10;
 
-if (x == 1);
+if (x == 1){
 	x = 2;
+}
+	
 	
 if (a) {
 	var z = 44;
