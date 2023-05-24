@@ -1,10 +1,11 @@
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Chat from './Chat.js';
-import { useState } from 'react';
+import Textbox from "./Textbox.js";
 
 function randomName() {
-  const names = ["Nera","Maja","Marko","Luka","Krešo","Nina","Sara","Laura","Ivan"];
+  const names = ["Nera", "Maja", "Marko", "Luka", "Krešo", "Nina", "Sara", "Laura", "Ivan"];
   const name = names[Math.floor(Math.random() * names.length)];
   return name;
 }
@@ -14,8 +15,7 @@ function randomColor() {
 }
 
 function App() {
-
-  const [message, setMessage] = useState([
+  const [messages, setMessages] = useState([
     {
       text: "This is a test message!",
       user: {
@@ -32,7 +32,8 @@ function App() {
 
   return (
     <div className="App">
-      <Chat message={message} user={user} setMessage={setMessage} setUser={setUser} />
+      <Chat messages={messages} user={user} />
+      <Textbox />
     </div>
   );
 }
