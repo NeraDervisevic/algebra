@@ -13,7 +13,7 @@
   color: white;
 }
 
-.Messages-list {
+.Chat-list {
   padding: 20px 0;
   max-width: 900px;
   width: 100%;
@@ -29,8 +29,8 @@
   margin-top: 10px;
 }
 
-.Messages-message.currentMember {
-  /*justify-content: flex-end;*/
+.Messages-message.activeUser {
+  justify-content: flex-end;
   flex-direction: row-reverse;
   text-align: right;
 }
@@ -39,7 +39,7 @@
   display: inline-block;
 }
 
-.currentMember > .Message-content {
+.activeUser > .Message-content {
   align-items: flex-end;
 }
 
@@ -68,7 +68,7 @@
   display: inline-block;
 }
 
-.currentMember > .Message-content .text {
+.activeUser > .Message-content .text {
   background-color: orangered;
 }
 

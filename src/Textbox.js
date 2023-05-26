@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 
-const Textbox = () => {
+const Textbox = ({ onSendMessage }) => {
   const [text, setText] = useState("");
 
   const onSubmit = (e) => {
     e.preventDefault();
-    // Your logic for handling form submission
-    console.log("Form submitted:", text);
-    setText(""); // Clear the input field after submission
+    if (text.trim() !== "") {
+      onSendMessage(text);
+      setText("");
+    }
   };
 
   const onChange = (e) => {

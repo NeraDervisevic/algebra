@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Chat from './Chat.js';
 import Textbox from "./Textbox.js";
@@ -26,14 +25,27 @@ function App() {
   ]);
 
   const [user, setUser] = useState({
-    username: randomName(),
-    color: randomColor()
+    username: randomName() || "Default User",
+    color: randomColor() || "#000000"
   });
+
+  const handleSendMessage = (messageText) => {
+    const newMessage = {
+      text: messageText,
+      user: user
+    };
+
+    setMessages([...messages, newMessage]);
+  };
+
+  const handleSetUserColor = (newColor) => {
+    setUser({ ...user, color: newColor });
+  };
 
   return (
     <div className="App">
       <Chat messages={messages} user={user} />
-      <Textbox />
+      <Textbox onSendMessage={handleSendMessage} onSetUserColor={handleSetUserColor} />
     </div>
   );
 }
