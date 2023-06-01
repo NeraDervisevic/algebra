@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Chat from './Chat.js';
 import Textbox from "./Textbox.js";
@@ -16,10 +16,10 @@ function randomColor() {
 function App() {
   const [messages, setMessages] = useState([
     {
-      text: "This is a test message!",
+      text: "Hey",
       user: {
-        color: "blue",
-        username: "bluemoon"
+        color: randomColor(),
+        username: "Anonymous"
       }
     }
   ]);
@@ -29,13 +29,46 @@ function App() {
     color: randomColor() || "#000000"
   });
 
-  const handleSendMessage = (messageText) => {
-    const newMessage = {
-      text: messageText,
-      user: user
-    };
+  const [droneChannel, setDroneChannel] = useState(null);
+  const [drone, setDrone] = useState(null);
 
-    setMessages([...messages, newMessage]);
+  useEffect(() => {
+    const droneInstance = new window.Scaledrone('JCruZRbwqSCyv5Om');
+    setDrone(droneInstance);
+
+    droneInstance.on('open', error => {
+      if (error) {
+        console.error(error);
+      } else {
+        const channel = droneInstance.subscribe('Web Chat Application');
+        setDroneChannel(channel);
+
+        channel.on('data', (message) => {
+          const newMessage = {
+            text: message,
+            user: {
+              color: randomColor(),
+              username: "Anonymous"
+            }
+          };
+
+          setMessages(prevMessages => [...prevMessages, newMessage]);
+        });
+      }
+    });
+
+    return () => {
+      droneInstance.close();
+    };
+  }, []);
+
+  const handleSendMessage = (messageText) => {
+    if (drone) {
+      drone.publish({
+        room: 'Web Chat Application',
+        message: messageText
+      });
+    }
   };
 
   const handleSetUserColor = (newColor) => {

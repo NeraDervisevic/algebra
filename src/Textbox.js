@@ -22,7 +22,7 @@ const Textbox = ({ onSendMessage }) => {
           onChange={onChange}
           value={text}
           type="text"
-          placeholder="Enter your message and press ENTER"
+          placeholder="Write your message..."
           autoFocus
         />
         <button>Send</button>
