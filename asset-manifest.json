@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/algebra/static/css/main.67ba8259.css",
+    "main.js": "/algebra/static/js/main.9433466e.js",
+    "static/js/787.7630dcf9.chunk.js": "/algebra/static/js/787.7630dcf9.chunk.js",
+    "index.html": "/algebra/index.html",
+    "main.67ba8259.css.map": "/algebra/static/css/main.67ba8259.css.map",
+    "main.9433466e.js.map": "/algebra/static/js/main.9433466e.js.map",
+    "787.7630dcf9.chunk.js.map": "/algebra/static/js/787.7630dcf9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.67ba8259.css",
+    "static/js/main.9433466e.js"
+  ]
+}
